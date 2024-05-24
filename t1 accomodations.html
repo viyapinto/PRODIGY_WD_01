@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation</title>
+    <style>
+        body {
+            font-family: "Trirong", serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            padding: 10px;
+            text-align: center;
+            background: #482216;
+            color: white;
+            font-size: 30px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #482216;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #482216;
+            color: white;
+        }
+
+        .form-container {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2, .form-container h3 {
+            text-align: center;
+            color: #482216;
+        }
+
+        .form-container p {
+            text-align: justify;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="checkbox"] {
+            width: auto;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #482216;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        .hotel-info {
+            margin: 20px 0;
+        }
+
+        .hotel-info img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .services-container label {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .services-container input {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const checkboxes = document.querySelectorAll('input[name="services[]"]:checked');
+            if (checkboxes.length < 5) {
+                alert('Please select at least five services.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="t1 registrations.html">Registrations</a>
+        <a href="t1 accommodations.html">Accommodation</a>
+        <a href="t1 contact.html">Contact</a>
+    </div>
+
+    <div class="header">
+        <h1>ACCOMMODATIONS</h1>
+    </div>
+
+    <div class="form-container">
+        <form action="process_registration.php" method="post" onsubmit="return validateForm()">
+            <h2>Accommodation Information</h2>
+            <p>Select your preferred hotel and required services:</p>
+            <label for="hotel">Hotel:</label>
+            <select name="hotel" id="hotel">
+                <option value="hotel_a">Leela Palace</option>
+                <option value="hotel_b">Sterlings Mac</option>
+                <option value="hotel_c">Hotel Taj</option>
+                <option value="hotel_d">The Chevron Brigade</option>
+            </select><br>
+
+            <div class="hotel-info">
+                <h3>Leela Palace</h3>
+                <img src="C:/Users/Viya/Downloads/leela palace.jpg" alt="Leela Palace">
+                <p>Immerse yourself in a blissful escape and unwind amidst idyllic settings. Soak in the magnificence of luxury with the best rate guarantee that comes with a host of complimentary services and the promise of the legendary Leela hospitality.</p>
+            </div>
+
+            <div class="hotel-info">
+                <h3>Sterlings Mac</h3>
+                <img src="C:/Users/Viya/Downloads/sterlings mac.jpg" alt="Sterlings Mac">
+                <p>Sterlings Mac Hotel is a 5-star luxury hotel in Bangalore with a perfect blend of business and leisure that offers features and comforts for both professional and personal stays.</p>
+            </div>
+
+            <div class="hotel-info">
+                <h3>Taj Hotel</h3>
+                <img src="C:/Users/Viya/Downloads/tajhotel.jpg" alt="Taj Hotel">
+                <p>In our bid to deliver authentic, undiluted experiences, we’ve introduced a unique regional home-style dining experience. Always prepared with a local touch, the home-style cooking ensures that you maintain good health throughout your stay. And at the same time, it gives you the opportunity to dabble in the local delicacies.</p>
+            </div>
+
+            <div class="hotel-info">
+                <h3>The Chevron Brigade</h3>
+                <img src="C:/Users/Viya/Downloads/chevron brigade.jpg" alt="The Chevron Brigade">
+                <p>An abode of luxury, minutes from Bangalore Railway Station, The Chevron Brigade spoils you with its choices in rooms, an on-site gym, and a 24-hour café.</p>
+            </div>
+
+            <label for="services">Required Services (at least five):</label>
+            <div class="services-container">
+                <label><input type="checkbox" name="services[]" value="wifi"> Wi-Fi</label>
+                <label><input type="checkbox" name="services[]" value="breakfast"> Breakfast</label>
+                <label><input type="checkbox" name="services[]" value="gym"> Gym</label>
+                <label><input type="checkbox" name="services[]" value="pool"> Swimming Pool</label>
+                <label><input type="checkbox" name="services[]" value="room_service"> Room Service</label>
+                <label><input type="checkbox" name="services[]" value="conference_room"> Conference Room</label>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

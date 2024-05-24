@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: "Trirong", serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            padding: 10px;
+            text-align: center;
+            background: #482216;
+            color: white;
+            font-size: 30px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #482216;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #482216;
+            color: white;
+        }
+
+        .form-container {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2, .form-container h3 {
+            text-align: center;
+            color: #482216;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="radio"], .form-container input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .form-container button {
+            background-color: #482216;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #333;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .contact-info h3 {
+            color: #333;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const checkboxes = document.querySelectorAll('input[name="payment_method[]"]:checked');
+            if (checkboxes.length === 0) {
+                alert('Please select at least one payment method.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="t1 registrations.html">Registrations</a>
+  <a href="t1 accomodations.html">Accommodation</a>
+  <a href="t1 contact.html">Contact</a>
+</div>
+
+<div class="header">
+    <h1>CONTACT</h1>
+</div>
+
+<div class="form-container">
+    <form action="process_registration.php" method="post" onsubmit="return validateForm()">
+        <h2>Payment Information</h2>
+        <label for="currency">Select Currency:</label><br>
+        <input type="radio" name="currency" value="rupees" checked> Rupees
+        <input type="radio" name="currency" value="dollar"> Dollar
+
+        <label for="payment_method">Payment Method:</label><br>
+        <input type="checkbox" name="payment_method[]" value="credit_card"> Credit Card
+        <input type="checkbox" name="payment_method[]" value="debit_card"> Debit Card
+        <input type="checkbox" name="payment_method[]" value="demand_draft"> Demand Draft
+
+        <button type="submit" formaction="C:\Users\Viya\Desktop\bca\web tech\cia2b submit.html">Submit</button>
+    </form>
+
+    <div class="contact-info">
+        <h2>For further details please contact:</h2>
+        <h3>Email: ignitron2023@gmail.com</h3>
+        <h3>Phone Number: 9987345567</h3>
+    </div>
+
+    <div class="form-container">
+        <h2>Other Details</h2>
+        <label for="comments">Comments:</label>
+        <textarea name="comments" id="comments" rows="4" cols="50"></textarea>
+    </div>
+</div>
+
+</body>
+</html>

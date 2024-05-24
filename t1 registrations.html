@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrations</title>
+    <style>
+        body {
+            font-family: "Trirong", serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            padding: 10px;
+            text-align: center;
+            background: #482216;
+            color: white;
+            font-size: 30px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #482216;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #482216;
+            color: white;
+        }
+
+        .form-container {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #482216;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #482216;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #333;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const phone = document.getElementById('phonenumber').value;
+            const phonePattern = /^[0-9]{10}$/;
+
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="t1 registrations.html">Registrations</a>
+        <a href="t1 accomodations.html">Accommodation</a>
+        <a href="t1 contact.html">Contact</a>
+    </div>
+
+    <div class="header">
+        <h1>REGISTRATIONS</h1>
+    </div>
+
+    <div class="form-container">
+        <form action="process_registration.php" method="post" onsubmit="return validateForm()">
+            <h2>Participant Information</h2>
+            <label for="participant_type">Participant Type:</label>
+            <select name="participant_type" id="participant_type">
+                <option value="student">Student</option>
+                <option value="faculty">Faculty Member</option>
+                <option value="professional">Professional</option>
+                <option value="company_rep">Company/Firm Representative</option>
+            </select>
+
+            <h2>Personal Information</h2>
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="country">Country:</label>
+            <input type="text" name="country" id="country" required>
+
+            <label for="phonenumber">Phone Number:</label>
+            <input type="text" name="phonenumber" id="phonenumber" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
